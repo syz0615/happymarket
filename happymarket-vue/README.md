@@ -20,11 +20,11 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-###技术栈
+### 技术栈
 - **vue部分**：UI框架 Vue-ydui，图片懒加载 vue-lazyload，路由vue-router，网络请求axios，Vant UI 的 card组件，地址省市级 ydui-district，LocalStroage本地存储
 - **后端**：springboot
 
-###目前具有功能：
+### 目前具有功能：
 1. **用户登录注册**
 2. **搜索商品**
 3. **分类：**分类页面的每个一级分类下面有二级分类，二级分类下面会展示出商品
@@ -33,24 +33,24 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 6. **地址：**设置默认地址时只能在新建地址中选择默认地址或者费默认地址，地址列表里无法设置，定义接口的时候没考虑这一点，待完善
 7. **收藏：**搜藏的商品会在收藏列表里，只能在列表里删除收藏的商品，在购物车中连续点两下第二下并不会取消，也是前期确定接口时的bug
 
-###缺陷
+### 缺陷
 大四刚开学就有一个20多天的实训，一边做一边想着秋招。这个项目两个人共同完成，一个写后端，我负责写前端，时间紧，做的时间只有10多天，本还有一个PC端用于商品管理，上传商品查看流水等
 没有全部完成，目前这部分完全没考虑配送，物流，点击付款的时候只是将订单id传给后台，后台将订单状态变为1表示已付款，也没有调用
 第三方应用支付宝微信这类的。做这个项目主要为了学习，进一步了解vue这方面的知识。
 
-###数据库
+### 数据库
 mysql数据库，数据库名称为happymarket，共有八张表
 
-###运行环境
+### 运行环境
 - **后台：** tomcat localhost:8080
-- **前端：**webpack 3.6.0  node V10.16.2 vue 3.10.0  localhost:8081
+- **前端：**webpack 3.6.0   node V10.16.2   vue 3.10.0  localhost:8081
 
-###页面展示
+### 页面展示
 1. **分类页面**
-<p>
-	<img src="01分类1.PNG" alt="Sample"  width="250" height="140">
-	<img src="02分类2.PNG" alt="Sample"  width="250" height="140">
-</p>
+
+	![](img/01分类1.PNG)
+	![](img/02分类2.PNG)
+
 
 2. **商品详情页面**
 
@@ -77,7 +77,7 @@ mysql数据库，数据库名称为happymarket，共有八张表
 </p>
 
 4. **设置地址**
-.4设置地址
+
 使用VUE YDUI提供的工具ydui-district来完成地址功能，在地址页面引入import {CitySelect} from 'vue-ydui/dist/lib.rem/cityselect';可以直接完成省市县级联的操作。
 <p>
 	<img src="10地址管理1.PNG" alt="Sample"  width="250" height="140">
