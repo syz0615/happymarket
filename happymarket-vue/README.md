@@ -48,8 +48,8 @@ mysql数据库，数据库名称为happymarket，共有八张表
 ### 页面展示
 1. **分类页面**
 
-	![](img/01分类1.PNG)
-	![](img/02分类2.PNG)
+	![](image/01分类1.PNG)
+	![](image/02分类2.PNG)
 
 
 2. **商品详情页面**
@@ -58,69 +58,65 @@ mysql数据库，数据库名称为happymarket，共有八张表
 <router-link :to="{name:'GoodsDetail',query:{goods_id:item.goodsId}}">，
 跳到商品详情页面并利用路由传值，将该商品的id传到详情页面中，展示对应商品，
 在详情页面中可以将商品加入到购物车和收藏。收藏前需要登录。
-<p>
-	<img src="03商品详情1.PNG" alt="Sample"  width="250" height="140">
-	<img src="04商品详情2.PNG" alt="Sample"  width="250" height="140">
-</p>
+
+  ![](image/03商品详情1.PNG)
+	![](image/04商品详情2.PNG)
+
 
 3. **登录注册及本地存储**
 用户未登录时在我的界面的头部显示登录注册按钮，点击登录注册按钮默认进入到登录界面。
 如果没有账号，在登录页面的下方点击立即注册可进入到注册页面。填写注册页面的信息，
 填写内容具有自动判断的功能，每项内容不能为空，手机号格式不正确也会有提示。
-<p>
-	<img src="06注册1.PNG" alt="Sample"  width="250" height="140">
-	<img src="07注册2.PNG" alt="Sample"  width="250" height="140">
-</p>
-<p>
-	<img src="08登录.PNG" alt="Sample"  width="250" height="140">
-	<img src="09登录后.PNG" alt="Sample"  width="250" height="140">
-</p>
+
+  ![](image/06注册1.PNG)
+	![](image/07注册2.PNG)
+
+  ![](image/08登录.PNG)
+	![](image/09登录后.PNG)
+
 
 4. **设置地址**
 
 使用VUE YDUI提供的工具ydui-district来完成地址功能，在地址页面引入import {CitySelect} from 'vue-ydui/dist/lib.rem/cityselect';可以直接完成省市县级联的操作。
-<p>
-	<img src="10地址管理1.PNG" alt="Sample"  width="250" height="140">
-	<img src="11地址管理2.PNG" alt="Sample"  width="250" height="140">
-</p>
-<p>
-	<img src="12地址管理.PNG" alt="Sample"  width="250" height="140">
-	<img src="13地址管理.PNG" alt="Sample"  width="250" height="140">
-</p>
+  ![](image/10地址管理1.PNG)
+	![](image/11地址管理2.PNG)
+  
+  ![](image/12地址管理.PNG)
+	![](image/13地址管理.PNG)
+
 
 5. **购物车**
 在商品详情页面点击加入购物车，可将商品加入到购物车中，并有提示，加入后点击购物车可直接进入到购物车页面查看对应商品
-<p>
-	<img src="14购物车.PNG" alt="Sample"  width="250" height="140">
-	<img src="15购物车.PNG" alt="Sample"  width="250" height="140">
-</p>
+
+  ![](image/14购物车.PNG)
+	![](image/15购物车.PNG)
+
 
 购物车中的商品可以进行加减数量，当数量是1的时候点击减少会提示是否删除，如果是，
 就将商品从购物车中删除，若点否，则仍保存在购物车中
-<p>
-	<img src="16购物车加减数量.PNG" alt="Sample"  width="250" height="140">
-	<img src="17加减数量.PNG" alt="Sample"  width="250" height="140">
-</p>
+
+  ![](image/16购物车加减数量.PNG)
+	![](image/17加减数量.PNG)
+
 
 6. **下订单**
 在购物车中点击去结算跳到支付订单页面，并把商品id和商品数量传过来，在订单页面中默认获取默认地址的id，在订单页面中点击支付，如果成功调用后端支付接口，会将该订单状态从0变成1，
 并直接跳到订单详情页面，如果支付失败，则停留在该页面。支付成功后可在我的订单中查看订单状态。
-<p>
-	<img src="18下订单.PNG" alt="Sample"  width="250" height="140">
-	<img src="19去支付.PNG" alt="Sample"  width="250" height="140">
-</p>
-<p>
-	<img src="20支付结果.PNG" alt="Sample"  width="250" height="140">
-	<img src="21查订单.PNG" alt="Sample"  width="250" height="140">
-</p>
+  ![](image/18下订单.PNG)
+	![](image/19去支付.PNG)
+  
+
+  ![](image/20支付结果.PNG)
+	![](image/21查订单.PNG)
+  
+
 
 7. **收藏**
 在商品详情中点击左下角的收藏按钮可收藏商品，点击首页的收藏导航进入到我的收藏页面，
 可以在这地点击商品直接进入到商品详情界面，也可删除收藏的商品。
-<p>
-	<img src="22收藏.PNG" alt="Sample"  width="250" height="140">
-	<img src="23收藏列表.PNG" alt="Sample"  width="250" height="140">
-</p>
+  ![](image/22收藏.PNG)
+	![](image/23收藏列表.PNG)
+  
 
 ###个人总结
 时间仓促，赶着校招的 时间来20多天的实训，实际做的时间大概10几天，还有好多功能没有实现，但通过完成这些简单的操作对vue更熟悉一些。
