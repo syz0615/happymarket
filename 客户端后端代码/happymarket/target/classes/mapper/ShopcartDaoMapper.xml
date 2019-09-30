@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	 "-//mybatis.org//DTD Mapper 3.0//EN" 
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happymarket.dao.ShopcartDao">
+	
+	<resultMap type="shopcart" id="shopcart">
+		<id column="shopcartId" property="shopcartId"/>
+		<association property="goods" select="com.happymarket.dao.GoodsDao.selectSimpleGoodsById" column="goodsId"></association>
+	</resultMap>
+	
+	<select id="selectShopcartByUserId" resultMap="shopcart">
+		select * from shopcart where userId=#{userId}
+	</select>
+	
+	<select id="selectShopcartByUserIdAndGoodsId" resultMap="shopcart">
+		select * from shopcart where userId=#{userId} and goodsId=#{goodsId}
+	</select>
+	
+	<insert id="insertShopcart" parameterType="shopcart">
+		insert into shopcart values (default,#{goods.goodsId},#{userId},now(),#{count},#{addPrice},#{isDefault})
+	</insert>
+	
+	<update id="updateShopcartById" >
+		update shopcart set count=count+#{count} where shopcartId=#{shopcartId}
+	</update>
+	
+	<delete id="deleteShopcartById">
+		delete from shopcart where shopcartId=#{shopcartId}
+	</delete>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	 "-//mybatis.org//DTD Mapper 3.0//EN" 
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happymarket.dao.CollectDao">
+	<resultMap type="collect" id="collect">
+		<id property="collectId" column="collectId"/>
+		<association property="goods" select="com.happymarket.dao.GoodsDao.selectSimpleGoodsById" column="goodsId"></association>
+	</resultMap>
+
+	<select id="selectCollectByUserId" resultMap="collect">
+		select * from collect where userId=#{userId}
+	</select>
+	
+	<insert id="insertCollect" parameterType="collect">
+		insert into collect values (default,#{userId},#{goods.goodsId},now(),#{collectPrice})
+	</insert>
+	
+	<delete id="deleteCollect">
+		delete from collect where collectId=#{collectId}
+	</delete>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	 "-//mybatis.org//DTD Mapper 3.0//EN" 
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happymarket.dao.GoodsDao">
+	<select id="selectGoodsById" resultType="goods">
+		select * from goods where goodsId=#{goodsId}
+	</select>
+	
+	<select id="selectSimpleGoodsById" resultType="goods">
+		select goodsId,goodsName,goodsTitle,goodsPrice,goodsImg from goods where goodsId=#{goodsId}
+	</select>
+	
+	<select id="selectAllGoods" resultType="goods">
+		select goodsId,goodsName,goodsTitle,goodsPrice,goodsImg from goods
+	</select>
+	
+	<select id="searchGoods" resultType="goods">
+		select goodsId,goodsName,goodsTitle,goodsPrice,goodsImg from goods where goodsTitle like '%%${key}%%'
+	</select>
+	
+	<select id="selectGoodsByCategoryId" resultType="goods">
+		select goodsId,goodsName,goodsTitle,goodsPrice,goodsImg from goods where categoryId=#{categoryId}
+	</select>
+	
+	<update id="updateGoodsStock">
+		update goods set goodsStock=#{goodsStock} where goodsId=#{goodsId}
+	</update>
+</mapper>

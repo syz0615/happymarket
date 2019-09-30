@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	 "-//mybatis.org//DTD Mapper 3.0//EN" 
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happymarket.dao.AddressDao">
+
+	
+	
+	<select id="selectAddressById" resultType="address">
+		select * from address where addressId=#{addressId}
+	</select>
+	
+	
+	<update id="updateAddress" parameterType="address">
+		update address set receiverName=#{receiverName},receiverAddress=#{receiverAddress},receiverDetail=#{receiverDetail},receiverPhone=#{receiverPhone},postNo=#{postNo},isDefault=#{isDefault} where addressId=#{addressId}
+	</update>
+	
+	<select id="selectAddressByUserId" resultType="address">
+		select * from address where userId=#{userId}
+	</select>
+	
+	<insert id="insertAddress" parameterType="address">
+		insert into address values (default,#{receiverName},#{receiverAddress},#{receiverDetail},#{receiverPhone},#{postNo},#{userId},#{isDefault})
+	</insert>
+	
+	<delete id="deleteAddress">
+		delete from address where addressId=#{addressId}
+	</delete>
+	
+	<select id="selectDefaultAddress" resultType="address">
+		select * from address where userId=#{userId} and isDefault=1
+	</select>
+</mapper>
